@@ -1,27 +1,75 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@layer tailwind-base, primereact, tailwind-utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@layer tailwind-base {
+  @tailwind base;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer tailwind-utilities {
+  @tailwind components;
+  @tailwind utilities;
+}
+
+.react-video-container {
+  overflow: hidden;
+    height: 100vh;
+    position: relative;
+    width: 100%;
+
+    video {
+      margin: 0;
+      padding: 0;
+      left: 0;
+      top: 0;
+      position: absolute;
+      object-fit: fill;
+      filter: brightness(35%);
+    }
+}
+
+.home-banner {
+  background-image: url("/home/home-banner.webp");
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+  background-repeat: no-repeat;
+  
+}
+
+@media screen and (max-width: 600px) {
+  .home-banner {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    
+  }
+
+  .react-video-container {
+      height: 80vh;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.p-carousel-next, .p-carousel-prev {
+  svg {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+.video-play-svg {
+  circle {
+    stroke-dasharray: 20;
+    animation: move 25s linear infinite;
+  }
+}
+
+.inovacao_icon_svg {
+    stroke-dasharray: 50;
+    animation: move 45s linear infinite 5s;
+
+}
+
+@keyframes move {
+    to {
+      stroke-dashoffset: 1000;
+    }
 }

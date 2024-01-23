@@ -1,7 +1,20 @@
+"use client"
+import Cookies from "js-cookie"
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+
 export default function Home() {
+
+  const router = useRouter();
+
+  useEffect(() => {
+    router.replace(`pt-BR/`);
+  }, [])
+
+
   return (
     <main>
-        <h1>O momento requer novas soluções: IBTeC a sua melhor parceria</h1>
+      <h1>Carregando...</h1>
     </main>
   )
 }

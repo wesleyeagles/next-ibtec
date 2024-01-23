@@ -11,19 +11,19 @@
 
 .react-video-container {
   overflow: hidden;
-    height: 100vh;
-    position: relative;
-    width: 100%;
+  height: 100vh;
+  position: relative;
+  width: 100%;
 
-    video {
-      margin: 0;
-      padding: 0;
-      left: 0;
-      top: 0;
-      position: absolute;
-      object-fit: fill;
-      filter: brightness(35%);
-    }
+  video {
+    margin: 0;
+    padding: 0;
+    left: 0;
+    top: 0;
+    position: absolute;
+    object-fit: fill;
+    filter: brightness(35%);
+  }
 }
 
 .home-banner {
@@ -32,7 +32,7 @@
   background-position: center center;
   height: 100vh;
   background-repeat: no-repeat;
-  
+
 }
 
 @media screen and (max-width: 600px) {
@@ -40,15 +40,16 @@
     height: 80vh;
     display: flex;
     align-items: center;
-    
+
   }
 
   .react-video-container {
-      height: 80vh;
+    height: 80vh;
   }
 }
 
-.p-carousel-next, .p-carousel-prev {
+.p-carousel-next,
+.p-carousel-prev {
   svg {
     width: 2rem;
     height: 2rem;
@@ -63,13 +64,94 @@
 }
 
 .inovacao_icon_svg {
-    stroke-dasharray: 50;
-    animation: move 45s linear infinite 5s;
+  stroke-dasharray: 50;
+  animation: move 45s linear infinite 5s;
 
 }
 
 @keyframes move {
-    to {
-      stroke-dashoffset: 1000;
-    }
+  to {
+    stroke-dashoffset: 1000;
+  }
+}
+
+.mercados {
+  position: relative;
+  z-index: 5;
+}
+
+.mercados .wrapper .slide {
+  width: 31.5%;
+  background-color: red;
+  height: 500px;
+  border-radius: 6px;
+  position: relative;
+  position: relative;
+  transform-origin: center;
+  transition: filter 200ms linear, transform 200ms linear;
+  transform: scale(1) translateZ(1);
+}
+
+.label-container {
+  position: absolute;
+  display: flex;
+  transition: .4s;
+  align-items: center;
+  padding-inline: 17px;
+  justify-content: space-between;
+  bottom: 38px;
+  right: 0;
+  font-weight: bold;
+  width: 90%;
+  height: 75px;
+  background-color: #2a3547;
+  border-left: 5px solid #00d6b6;
+}
+
+.slick-slide {
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
+
+.slick-list {
+  margin: 0 -2rem!important;
+}
+
+@media screen and (max-width: 1368px) {
+  .slick-slide {
+    padding: 0 1rem;
+  }
+
+  .slick-list {
+    margin: 0 -1rem!important;
+
+  }
+
+}
+
+.mercados .wrapper .slide:hover {
+  transform: scale(1.05) translateZ(0);
+}
+
+.mercados .wrapper:hover .slide:not(:hover) {
+  filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
+}
+
+.mercados .wrapper .calcados {
+  background-image: url("/home/calcados.webp");
+  background-size: cover;
+}
+
+.mercados .wrapper .industria-textil {
+  background-image: url("/home/industria-textil.webp");
+  background-size: cover;
+}
+
+.mercados .wrapper .equipamentos-de-protecao {
+  background-image: url("/home/equipamentos-de-protecao.webp");
+  background-size: cover;
+}
+
+.p-tabview-selected {
+  color: #00d6b6;
 }

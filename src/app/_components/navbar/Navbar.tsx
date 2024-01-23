@@ -47,7 +47,7 @@ export default function Navbar() {
 
                             <div className="flex items-center gap-3">
                                 <Link href="/">
-                                    <Button className="flex gap-2 bg-transparent text-white border-white py-2 px-3 hover:bg-white hover:text-black hidden sm:flex"><PersonIcon /> {intl.formatMessage({ id: "btn_area_cliente" })}</Button>
+                                    <Button className="flex gap-2 bg-transparent text-white border border-white py-2 px-3 hover:bg-white hover:text-black hidden sm:flex"><PersonIcon /> {intl.formatMessage({ id: "btn_area_cliente" })}</Button>
                                 </Link>
                                 <MenuIcon onClick={() => setVisible(true)} className="cursor-pointer" fontSize="large" />
                             </div>
